@@ -15,13 +15,6 @@ RUN apt-get update && apt-get install -q -y \
   build-essential \
   wget 
 
-#RUN cd /tmp && \
-#  wget http://developer.download.nvidia.com/compute/cuda/7_0/Prod/local_installers/cuda_7.0.28_linux.run && \
-#  chmod +x cuda_*_linux.run && ./cuda_*_linux.run -extract=`pwd` && \
-#  ./NVIDIA-Linux-x86_64-*.run -s --no-kernel-module && \
-#  ./cuda-linux64-rel-*.run -noprompt && \
-#  rm -rf *
-
 # Ensure the CUDA libs and binaries are in the correct environment variables
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
 ENV PATH=$PATH:/usr/local/cuda/bin
